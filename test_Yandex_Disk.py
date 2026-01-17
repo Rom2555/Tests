@@ -48,7 +48,7 @@ def test_folder_appears_in_file_list(cleanup_folder):
     time.sleep(1)
 
     # Получаем список корневой директории
-    response = requests.get(f"{API_BASE}", headers=HEADERS, params={'path': 'disk:/'})
+    response = requests.get(f"{API_BASE}", headers=HEADERS, params={'path': 'disk:/', 'limit': 1000})
     assert response.status_code == 200, "Не удалось получить список файлов"
 
     items = [item['name'] for item in response.json()['_embedded']['items']]
