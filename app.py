@@ -114,8 +114,7 @@ def show_all_docs_info():
     """
     Возвращает список строк с информацией о всех документах.
     """
-    result = []
-    result.append('Список всех документов:\n')
+    result = ['Список всех документов:\n']
     for doc in documents:
         result.append(show_document_info(doc))
     return result
